@@ -68,10 +68,19 @@ fun TataletakColumnRow(modifier: Modifier) {
             modifier = modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceEvenly
         ) {
-            Text(text = "Komponen1")
-            Text(text = "Komponen2")
-            Text(text = "Komponen3")
-            Text(text = "Komponen4")
+            Text(text = "Komponen1Baris1")
+            Text(text = "Komponen2Baris1")
+            Text(text = "Komponen3Baris1")
+        }
+
+        // Baris 2
+        Row(
+            modifier = modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceEvenly
+        ) {
+            Text(text = "Komponen1Baris2")
+            Text(text = "Komponen2Baris2")
+            Text(text = "Komponen3Baris2")
         }
     }
 }
