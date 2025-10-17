@@ -36,8 +36,7 @@ fun TataletakColumn(modifier: Modifier) {
 @Composable
 fun TataletakRow(modifier: Modifier) {
     Row(modifier = modifier.fillMaxWidth(),
-        horizontalArrangement = Arrangement.SpaceEvenly
-    ) {
+        horizontalArrangement = Arrangement.SpaceEvenly) {
         Text(text = "Komponen1")
         Text(text = "Komponen2")
         Text(text = "Komponen3")
@@ -61,47 +60,22 @@ fun TataletakBox(modifier: Modifier) {
 }
 
 @Composable
-fun TataletakColumnRow(modifier: Modifier) {
-    Column(modifier = modifier.fillMaxWidth()) {
-        // Baris1
-        Row(
-            modifier = modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceEvenly
-        ) {
-            Text(text = "Komponen1Baris1")
-            Text(text = "Komponen2Baris1")
-            Text(text = "Komponen3Baris1")
-        }
-
-        // Baris 2
-        Row(
-            modifier = modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceEvenly
-        ) {
-            Text(text = "Komponen1Baris2")
-            Text(text = "Komponen2Baris2")
-            Text(text = "Komponen3Baris2")
-        }
-    }
-}
-
-@Composable
 fun TataletakColumRow(modifier: Modifier) {
     Column() {
         //Baris1
         Row(modifier = modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceEvenly) {
-            Text(text = "KomponenBaris1")
-            Text(text = "KomponenBaris2")
-            Text(text = "KomponenBaris3")
+            Text(text = "Komponen1Baris1")
+            Text(text = "Komponen2Baris1")
+            Text(text = "Komponen3Baris1")
         }
 
         //Baris2
         Row(modifier = modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceEvenly) {
-            Text(text = "KomponenBaris1s2")
-            Text(text = "KomponenBaris2s2")
-            Text(text = "KomponenBaris3s2")
+            Text(text = "Komponen1Baris1s2")
+            Text(text = "Komponen2Baris2s2")
+            Text(text = "Komponen3Baris3s2")
         }
     }
 }
@@ -126,14 +100,56 @@ fun TataletakRowColum(modifier: Modifier) {
 }
 
 @Composable
-fun TataletakRowColum2(modifier: Modifier) {
-    Row(modifier = modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceEvenly) {
-        //Kolom2
-        Column() {
-            Text(text = "KomponenKolom2")
-            Text(text = "KomponenKolom2s2")
-            Text(text = "KomponenKolom2s3")
+fun TataletakBoxColumnRow(modifier: Modifier) {
+    val gambar = painterResource(id = R.drawable.notasibalok)
+    Column() {
+        Box(
+            modifier = modifier
+                .fillMaxWidth()
+                .height(height = 110.dp)
+                .background(color = Color.Yellow),
+            contentAlignment = Alignment.Center
+        ) {
+            Column() {
+                Row(
+                    modifier = modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceEvenly
+                ) {
+                    Text(text = "Col1.Rowl.Komponen1")
+                    Text(text = "Col1.Rowl.Komponen2")
+                    Text(text = "Col1.Rowl.Komponen3")
+                }
+
+                Row(
+                    modifier = modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceEvenly
+                ) {
+                    Text(text = "Col1.Row2.Komponen1")
+                    Text(text = "Col1.Row2.Komponen2")
+                    Text(text = "Col1.Row2.Komponen3")
+                }
+            }
+        }
+
+        Spacer(modifier = Modifier.height(height = 10.dp))
+        Box(
+            modifier = modifier
+                .fillMaxWidth()
+                .height(height = 300.dp)
+                .background(color = Color.Cyan),
+            contentAlignment = Alignment.Center
+        ) {
+            Image(painter = gambar,
+                contentDescription = null,
+                contentScale = ContentScale.Fit)
+            Text(text = "My Music",
+                fontSize = 50.sp,
+                color = Color.Red,
+                fontWeight = FontWeight.Bold,
+                fontFamily = FontFamily.Cursive,
+                modifier = Modifier.align(
+                    alignment = Alignment.Center)
+            )
         }
     }
 }
-
